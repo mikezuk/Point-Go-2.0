@@ -41,10 +41,10 @@ function draw() {
   textSize(120);
   textFont(myFont)
   textAlign(CENTER)
+  //fill('red')
   text('Point & Go!', width / 1.8, height / 1.8);
   //image (img4, mouseX, mouseY)
   
-
 }
 
 
