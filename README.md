@@ -12,7 +12,11 @@ To navigate this project, simply move your mouse across the page, choose from on
 
 ## Authors
 
+Point & Go 1.0
 Oona Pecson, Mike Kattan
+
+Point & Go 2.0
+Mike Kattan
 
 ## Acknowledgements
 
