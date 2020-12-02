@@ -1,5 +1,7 @@
 let img;
 let canvas2;
+let button;
+let transparent;
 
 
 
@@ -26,6 +28,11 @@ function setup() {
   image(img3, 305, 200, width * scale /21, height/ 12 * scale);
   image(img3, 605,155, width / 21 * scale, height / 12 * scale)
   image(img3, 1090, 205, width / 21 * scale, height / 12 * scale )
+
+  // button = createButton('click me');
+  // button.position(19, 19);
+  // button.size(45,45)
+  
 }
 
 // function btn () {
@@ -45,6 +52,7 @@ function draw() {
   text('Point & Go!', width / 1.8, height / 1.8);
   //image (img4, mouseX, mouseY)
   
+
 }
 
 

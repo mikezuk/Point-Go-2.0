@@ -1,13 +1,19 @@
 let img;
 let img2;
+let cp ;
+let c2;
+
 
 function preload() {
   img = loadImage('empire/assets/nyc/EMPIRE.PNG');
   img2 = loadImage('chinatown/assets/nyc/CHINATOWN.PNG')
+  bkg = loadImage ('empire/assets/nyc/NYC.jpg')
 }
 
 function setup() {
   createCanvas(1280, 770);
+image(bkg, 200,90)
+
 }
 
 function draw() {
@@ -18,7 +24,12 @@ function draw() {
   image(img2, 750, 420, img.width * scale2, img.height * scale2);
   position = ('SCALE');
 
-}
+
+
+  
+ 
+} 
+
 
 function openWin() {
   window.open("empire/empire-index.html", "_self")
