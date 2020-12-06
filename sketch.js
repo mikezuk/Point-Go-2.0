@@ -4,13 +4,14 @@ let button;
 let transparent;
 let time;
 
-//oadJSON('http://worldtimeapi.org/api/timezone/Asia/Seoul.json'
+
 
 function preload() {
   img = loadImage('mainAssets/map.png');
   img3 = loadImage('mainAssets/pin2.png');
   myFont = loadFont('mainAssets/selima_.otf');
   img4 = loadImage('mainAssets/plane.png')
+  loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', gotData)
 }
 function setup() {
   
@@ -32,6 +33,11 @@ function setup() {
   
 }
 
+function gotData(data){
+
+  weather = data 
+  console.info(data)
+}
 
 
 function draw() {

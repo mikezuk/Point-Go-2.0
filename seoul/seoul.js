@@ -4,16 +4,17 @@ let img2;
 function preload() {
   img = loadImage('namsan-tower/assets/seoul/NAMSAN.PNG');
  img2 = loadImage('hongdae/assets/seoul/HONGDAE.PNG')
+ myFont = loadFont('digital-7 (italic).ttf');
 }
 
 function setup() {
   createCanvas(1310, 770)
   loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
-
+  loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Seoul&format=json', time)
 }
-function gotData(data){
-  weather = data 
-  console.info(data)
+function gotData(data1){
+  weather = data1 
+  console.info(data1)
   
   textSize(20)
   text('Current Weather:', 15,160)
@@ -24,6 +25,22 @@ function gotData(data){
   fill(158, 231, 255,0)
   strokeWeight(10)
   rect(5,120, 175,180,20)
+}
+
+function time(data){
+  time = data 
+  // console.info(time)
+  // console.info(data.data.time_zone[0])
+  // console.info(data.data.time_zone[0])
+push()
+  a = data.data.time_zone[0].localtime
+  textSize(60)
+  textAlign(CENTER);
+  textFont(myFont)
+text(a, 500, 60, 100,120)
+pop()
+
+  // text(time_zone.localtime, 100, 500)
 }
 function draw() {
   let scale = 1.5 / 10
