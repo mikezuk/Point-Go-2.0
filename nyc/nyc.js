@@ -19,7 +19,7 @@ function setup() {
   createCanvas(1280, 1000);
 image(bkg, 200,90)
 loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=New_York&format=json', time )
-loadJSON('http://api.openweathermap.org/data/2.5/weather?q=manhattan&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
+loadJSON('https://api.openweathermap.org/data/2.5/weather?q=manhattan&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
 
 let y = 110
 let imgW = person.width*0.05;

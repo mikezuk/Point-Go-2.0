@@ -14,7 +14,7 @@ myFont = loadFont('digital-7 (italic).ttf');
 function setup() {
   createCanvas(1455, 995);
   loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', time )
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
+  loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
   let scale = 0.9/ 1
   imageMode(CENTER)
 

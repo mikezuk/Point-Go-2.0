@@ -12,6 +12,7 @@ function setup() {
   createCanvas(1310, 770)
   loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
   loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Seoul&format=json', time)
+  image(termo, 60, 280, termo.width/2, termo.height/2)
 }
 function gotData(data1){
   weather = data1 
@@ -25,7 +26,13 @@ function gotData(data1){
   
   fill(158, 231, 255,0)
   strokeWeight(10)
-  rect(5,120, 175,580,20)
+  rect(5,120, 175,590,20)
+ //termo
+  noStroke()
+  fill('blue')
+  rect(90,500, 20 , weather.main.temp +100)
+  
+  
 }
 
 function time(data){
