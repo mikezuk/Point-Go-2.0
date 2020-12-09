@@ -21,7 +21,7 @@ function setup() {
   image (eiffel,430,410,eiffel.width/1.8 * scale ,eiffel.height/1.8 * scale)
   image (louvre, 964,635, louvre.width/2.3 * scale, louvre.height/2.4 * scale)
   imageMode(CENTER)
-  
+  image(termo, 103, 480, termo.width/2, termo.height/2)
 
 }
 function gotData(data1){
@@ -38,11 +38,11 @@ weather = data1
   
   fill(158, 231, 255,0)
   strokeWeight(10)
-  rect(5,120, 175,180,20)
+  rect(5,120, 175,590,20)
 
   noStroke()
   fill('blue')
-  rect(75,578, 22 , -weather.main.temp* 2.2)
+  rect(75,569, 22 , -weather.main.temp* 2.8)
   
  }
 
