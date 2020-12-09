@@ -5,11 +5,12 @@ function preload() {
   img = loadImage('namsan-tower/assets/seoul/NAMSAN.PNG');
  img2 = loadImage('hongdae/assets/seoul/HONGDAE.PNG')
  myFont = loadFont('digital-7 (italic).ttf');
+ termo = loadImage ('termo.png');
 }
 
 function setup() {
   createCanvas(1310, 770)
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
+  loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
   loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Seoul&format=json', time)
 }
 function gotData(data1){
@@ -24,7 +25,7 @@ function gotData(data1){
   
   fill(158, 231, 255,0)
   strokeWeight(10)
-  rect(5,120, 175,180,20)
+  rect(5,120, 175,580,20)
 }
 
 function time(data){
