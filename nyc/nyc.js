@@ -13,6 +13,7 @@ function preload() {
   myFont = loadFont('digital-7 (italic).ttf');
  population = loadJSON("Population.json")
  person = loadImage ('person.png')
+ termo = loadImage ('termo.png');
 }
 
 function setup() {
@@ -34,6 +35,7 @@ for (let i = 0; i < 20; i++) {
 image(person, 900, 700, 150,150)
 textSize(100)
 text('=',1050, 800)
+image(termo, 60, 280, termo.width/2, termo.height/2)
 
 }
 
@@ -72,7 +74,13 @@ function gotData(data1){
   
   fill(158, 231, 255,0)
   strokeWeight(10)
-  rect(5,120, 175,180,20)
+  rect(5,120, 175,590,20)
+
+   //termo
+   noStroke()
+   fill('blue')
+   rect(75,578, 22 , -weather.main.temp* 2.2)
+   
 }
 function time(data){
   time = data 

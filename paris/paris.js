@@ -8,7 +8,7 @@ eiffel = loadImage ('eiffel/assets/eiffel.JPG')
 louvre = loadImage ('eiffel/assets/louvre.JPG')
 myFont = loadFont('digital-7 (italic).ttf');
 //('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', gotData)
-  
+termo = loadImage ('termo.png');
 }
 
 function setup() {
@@ -21,7 +21,7 @@ function setup() {
   image (eiffel,430,410,eiffel.width/1.8 * scale ,eiffel.height/1.8 * scale)
   image (louvre, 964,635, louvre.width/2.3 * scale, louvre.height/2.4 * scale)
   imageMode(CENTER)
-
+  
 
 }
 function gotData(data1){
@@ -39,6 +39,11 @@ weather = data1
   fill(158, 231, 255,0)
   strokeWeight(10)
   rect(5,120, 175,180,20)
+
+  noStroke()
+  fill('blue')
+  rect(75,578, 22 , -weather.main.temp* 2.2)
+  
  }
 
 function time(data){

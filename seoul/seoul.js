@@ -30,7 +30,7 @@ function gotData(data1){
  //termo
   noStroke()
   fill('blue')
-  rect(90,500, 20 , weather.main.temp +100)
+  rect(75,578, 22 , -weather.main.temp* 2.2)
   
   
 }
