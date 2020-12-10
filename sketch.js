@@ -3,10 +3,12 @@ let canvas2;
 let button;
 let transparent;
 let time;
+let pm;
 
 
 
 function preload() {
+  pm = loadImage('physical-world-map.jpg')
   img = loadImage('mainAssets/map.png');
   img3 = loadImage('mainAssets/pin2.png');
   myFont = loadFont('mainAssets/selima_.otf');
@@ -15,13 +17,15 @@ function preload() {
 }
 function setup() {
   
-  //UTC -05:00
+  button = createButton('Physical Map');
+  button.position (300,15)
+  button.mousePressed(physical)
+
+
+
   let scale = 0.8/ 1
   createCanvas(1455, 995 );
-  // background(255)
 
-  // translate (-100,0)
-  
   image(img, 0, 0, width * scale + 170, height * scale);
   imageMode(CENTER)
 
@@ -31,6 +35,8 @@ function setup() {
   image(img3, 605,155, width / 21 * scale, height / 12 * scale)
   image(img3, 1090, 205, width / 21 * scale, height / 12 * scale )
   
+  
+ 
 }
 
 function gotData(data){
@@ -55,6 +61,17 @@ function draw() {
 }
 
 
+function physical (){
+  let scale = 0.8/ 1
+  image(pm, 800, 500, width * scale * 1.4+ 20, height * scale + 250); 
+
+  
+  //imageMode(CENTER)
+  image(img3, 445, 230, width * scale /21 * 1.4, height/ 12 * scale * 1.2);
+  image(img3, 755,155, width / 21 * scale  * 1.4, height / 12 * scale* 1.2)
+  image(img3, 1090, 205, width / 21 * scale  * 1.4, height / 12 * scale * 1.2)
+
+}
 
 
 
@@ -68,6 +85,10 @@ function openWin2() {
 
 function openWin3() {
   window.open("paris/paris-index.html", "_self");
+}
+
+function openWin4() {
+  window.open("../index.html", "_self");
 }
 
 function mousePressed () {
