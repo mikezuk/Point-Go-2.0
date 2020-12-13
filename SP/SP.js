@@ -1,20 +1,30 @@
 let img;
 let img2;
+let cp ;
+let c2;
+var population
+let num
+let person;
 
 function preload() {
-  img = loadImage('namsan-tower/assets/seoul/NAMSAN.PNG');
- img2 = loadImage('hongdae/assets/seoul/HONGDAE.PNG')
- myFont = loadFont('digital-7 (italic).ttf');
+
+  img = loadImage('masppaulista.jpg')
+
+  myFont = loadFont('digital-7 (italic).ttf');
+
  termo = loadImage ('termo.png');
  clock = loadImage( 'clock.png')
 }
 
 function setup() {
   createCanvas(1310, 770)
-  loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
-  loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Seoul&format=json', time)
+  loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Sao,Paulo&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
+  loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Sao_Paulo&format=json', time)
   image(termo, 60, 280, termo.width/2, termo.height/2)
+
+
 }
+
 function gotData(data1){
   weather = data1 
   console.info(data1)
@@ -23,7 +33,7 @@ function gotData(data1){
   text('Current Weather:', 15,160)
   text('degrees celsius', 20,270)
   textSize(50)
-  text(weather.main.temp, 50, 230)
+  text(weather.main.temp, 40, 230)
   
   fill(158, 231, 255,0)
   strokeWeight(10)
@@ -43,40 +53,46 @@ function time(data){
   // console.info(data.data.time_zone[0])
   // fill(50)
   // rect(550, 0, 280,150)
-  image(clock,710,50, clock.height *2.7, clock.width -50)
+  image(clock,620,0, clock.height *2.8, clock.width -20)
 push()
 
   a = data.data.time_zone[0].localtime
   textSize(80)
   textAlign(CENTER);
   textFont(myFont)
-text(data.data.time_zone[0].localtime, 630, -20, 200)
+text(data.data.time_zone[0].localtime, 630, 0, 200)
 
 
 textSize(70)
 text(data.data.time_zone[0].localtime, 630, 740, 200)
 pop()
 
+  //text(time_zone.localtime, 100, 500)
 }
+
+
 function draw() {
-  let scale = 1.5 / 10
-  let scale2 = 2 / 10
-  imageMode(CENTER);
-  image(img, 1107, 220, img.width * scale, img.height * scale);
-  image(img2, 450, 480, img.width * scale2, img.height * scale2);
-  position = ('SCALE');
+  let scale = 2.5 / 10
   
-}
+  imageMode(CENTER);
+  image(img, 980, 230, img.width * scale, img.height * scale); 
+  // image(img2, 750, 420, img.width * scale2, img.height * scale2);
+  // position = ('SCALE');
+  
+ //console.info(population.Population_size[0])
+
+
+} 
+
+
 
 function openWin() {
-  window.open("namsan-tower/index2.html", "_self");
+  window.open("MASP/MASP-index.html", "_self")
+
 }
 
-function openWin2() {
-  window.open("hongdae/index3.html", "_self");
-}
 
 function openWin3() {
-  window.open("../index.html", "_self");
+  window.open("../index.html", "_self")
 }
 

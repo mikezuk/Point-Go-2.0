@@ -15,15 +15,16 @@ function preload() {
   img3 = loadImage('mainAssets/pin2.png');
   myFont = loadFont('mainAssets/selima_.otf');
   img4 = loadImage('mainAssets/plane.png')
-  loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', gotData)
+  //loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', gotData)
 }
 function setup() {
   
-  //createCanvas(1455, 995 );
+  createCanvas(1455, 995 );
   // main()
+ 
 
   let scale = 0.8/ 1
-  createCanvas(1455, 995 );
+  
 
 
   
@@ -36,6 +37,7 @@ function setup() {
   image(img3, 305, 200, width * scale /21, height/ 12 * scale);
   image(img3, 605,155, width / 21 * scale, height / 12 * scale)
   image(img3, 1090, 205, width / 21 * scale, height / 12 * scale )
+  image(img3, 410, 490, width * scale /21, height/ 12 * scale);
   
 
   button = createButton('Physical Map');
@@ -44,7 +46,7 @@ function setup() {
   button.size(100,40)
 
 
-  button = createButton('Main Map');
+  button = createButton('Artistic Map');
   button.position (100,15)
   button.mousePressed(main)
   button.size(100,40)
@@ -66,7 +68,8 @@ function gotData(data){
 
 
 function draw() {
-
+push()
+translate(0,-100)
   scale (0.8 / 1)
   textSize(120);
   textFont(myFont)
@@ -74,7 +77,7 @@ function draw() {
   //fill('red')
   text('Point & Go!', width / 1.8, height / 1.8);
   //image (img4, mouseX, mouseY)
-  
+  pop()
 // console.info(time)
 
 }
@@ -93,6 +96,7 @@ function draw() {
   image(img3, 305, 200, width * scale /21, height/ 12 * scale);
   image(img3, 605,155, width / 21 * scale, height / 12 * scale)
   image(img3, 1090, 205, width / 21 * scale, height / 12 * scale )
+  image(img3, 410, 490, width * scale /21, height/ 12 * scale);
   
  }
 
@@ -106,18 +110,21 @@ function physical (){
   image(img3, 440, 230, width * scale /21 * 1.7, height/ 12 * scale * 1.5);
   image(img3, 810,165, width / 21 * scale  * 1.7, height / 12 * scale* 1.5)
   image(img3, 1380, 215, width / 21 * scale  * 1.7, height / 12 * scale * 1.5)
+  image(img3, 580, 590, width * scale /21* 1.7, height/ 12 * scale* 1.5);
+  
 
 }
 
 function political(){
   let scale = 0.8
-  image(polmap, 840, 350, width * scale * 1.4+ 70, height * scale + 410); 
+  image(polmap, 840, 320, width * scale * 1.4+ 70, height * scale + 410); 
 
   
   //physical btns
   image(img3, 420, 230, width * scale /21 * 1.7, height/ 12 * scale * 1.5);
   image(img3, 810,165, width / 21 * scale  * 1.7, height / 12 * scale* 1.5)
   image(img3, 1380, 215, width / 21 * scale  * 1.7, height / 12 * scale * 1.5)
+  image(img3, 560, 590, width * scale /21* 1.7, height/ 12 * scale* 1.5);
 
 }
 
@@ -133,9 +140,9 @@ function openWin3() {
   window.open("paris/paris-index.html", "_self");
 }
 
-// function openWin4() {
-//   window.open("../index.html", "_self");
-// }
+function openWin4() {
+  window.open("SP/SP-index.html", "_self");
+}
 
 function mousePressed () {
   console.info (mouseX, mouseY)

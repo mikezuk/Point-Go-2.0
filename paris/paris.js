@@ -3,23 +3,25 @@ let canvas2;
 //let time;
 
 function preload() {
-
+bkg = loadImage ('eiffel/assets/PARIS.jpg');
 eiffel = loadImage ('eiffel/assets/eiffel.JPG')
 louvre = loadImage ('eiffel/assets/louvre.JPG')
 myFont = loadFont('digital-7 (italic).ttf');
 //('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', gotData)
 termo = loadImage ('termo.png');
+clock = loadImage( 'clock.png')
 }
 
 function setup() {
   createCanvas(1455, 995);
+  image(bkg, 250,100)
   loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=Paris&format=json', time )
   loadJSON('https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
   let scale = 0.9/ 1
   imageMode(CENTER)
 
-  image (eiffel,430,410,eiffel.width/1.8 * scale ,eiffel.height/1.8 * scale)
-  image (louvre, 964,635, louvre.width/2.3 * scale, louvre.height/2.4 * scale)
+  image (eiffel,430,310,eiffel.width/1.8 * scale ,eiffel.height/1.8 * scale)
+  image (louvre, 964,535, louvre.width/2.3 * scale, louvre.height/2.4 * scale)
   imageMode(CENTER)
   image(termo, 103, 480, termo.width/2, termo.height/2)
 
@@ -51,15 +53,21 @@ function time(data){
   // console.info(time)
   // console.info(data.data.time_zone[0])
   // console.info(data.data.time_zone[0])
+  // fill(50)
+  // rect(550, 0, 280,150)
+  image(clock,710,50, clock.height *2.7, clock.width -50)
 push()
+
   a = data.data.time_zone[0].localtime
-  textSize(60)
+  textSize(80)
   textAlign(CENTER);
   textFont(myFont)
-text(a, 500, 60, 100,120)
-pop()
+text(data.data.time_zone[0].localtime, 630, -20, 200)
 
-  // text(time_zone.localtime, 100, 500)
+
+textSize(70)
+text(data.data.time_zone[0].localtime, 630, 770, 200)
+pop()
 }
 
 function openWin3() {

@@ -14,6 +14,7 @@ function preload() {
  population = loadJSON("Population.json")
  person = loadImage ('person.png')
  termo = loadImage ('termo.png');
+ clock = loadImage( 'clock.png')
 }
 
 function setup() {
@@ -22,19 +23,19 @@ image(bkg, 200,90)
 loadJSON('https://api.worldweatheronline.com/premium/v1/tz.ashx?key=8027c52829be4c82829235539200312%20&q=New_York&format=json', time )
 loadJSON('https://api.openweathermap.org/data/2.5/weather?q=manhattan&appid=db257703b317c0eafa49fe6c0038caba&units=metric', gotData)
 
-let y = 110
-let imgW = person.width*0.05;
-  let imgH = person.height*0.05;
-for (let i = 0; i < 20; i++) {
-  image(person,y , i + 700, imgW, imgH)
-  image(person,y , i + 750, imgW, imgH)
-  image(person,y , i + 800, imgW, imgH)
-  image(person,y , i + 850, imgW, imgH)
-  y += 40
-}
-image(person, 900, 700, 150,150)
-textSize(100)
-text('=',1050, 800)
+// let y = 110
+// let imgW = person.width*0.05;
+//   let imgH = person.height*0.05;
+// for (let i = 0; i < 20; i++) {
+//   image(person,y , i + 700, imgW, imgH)
+//   image(person,y , i + 750, imgW, imgH)
+//   image(person,y , i + 800, imgW, imgH)
+//   image(person,y , i + 850, imgW, imgH)
+//   y += 40
+// }
+// image(person, 900, 700, 150,150)
+// textSize(100)
+// text('=',1050, 800)
 image(termo, 60, 280, termo.width/2, termo.height/2)
 
 }
@@ -87,15 +88,21 @@ function time(data){
   // console.info(time)
   // console.info(data.data.time_zone[0])
   // console.info(data.data.time_zone[0])
+  // fill(50)
+  // rect(550, 0, 280,150)
+  image(clock,710,50, clock.height *2.7, clock.width -50)
 push()
+
   a = data.data.time_zone[0].localtime
-  textSize(60)
+  textSize(80)
   textAlign(CENTER);
   textFont(myFont)
-text(a, 500, 60, 100,120)
-pop()
+text(data.data.time_zone[0].localtime, 630, -20, 200)
 
-  // text(time_zone.localtime, 100, 500)
+
+textSize(70)
+text(data.data.time_zone[0].localtime, 630, 780, 200)
+pop()
 }
 
 
